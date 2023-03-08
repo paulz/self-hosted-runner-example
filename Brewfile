@@ -1,0 +1,6 @@
+tap "mvp/uhubctl https://github.com/mvp/uhubctl"
+brew "uhubctl"
+brew "mobiledevice"
+brew "jq"
+brew "libimobiledevice"
+brew "pbzip2"
