@@ -16,3 +16,13 @@ See [wiki](https://github.com/paulz/self-hosted-runner-example/wiki) on instruct
 
 > Self-hosted runners offer more control of hardware, operating system, and software tools than GitHub-hosted runners provide. 
 See: https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#about-self-hosted-runners
+
+Compared to cloud hosted runners this solution results in:
+1. Faster runs
+2. Less cost
+3. Easier to debug
+4. Tests on devices
+
+At the cost:
+1. Setup
+2. Maintenance
