@@ -1,6 +1,4 @@
-# self-hosted-runner-example
-
-Example iOS app with self-hosted runner
+# Example Xcode project with self-hosted runner
 
 ### What is self-hosted runner
 
