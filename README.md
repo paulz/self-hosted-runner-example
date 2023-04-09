@@ -6,9 +6,11 @@ A self-hosted runner is your computer to execute your workflow jobs.
 
 ## Purpose
 
-To help developers setup their projects with self-hosted runner. 
+To help developers setup their projects with self-hosted runners on Mac. 
 
 This repository has working xcode project and Github Actions workflows that can be used as a template.
+
+See [wiki](https://github.com/paulz/self-hosted-runner-example/wiki) on instructions how to setup macOS runners
 
 ### Why self-hosted
 
