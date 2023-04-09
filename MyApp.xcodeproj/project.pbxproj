@@ -44,6 +44,7 @@
 		33011E7729E263DE003697D3 /* MyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33011E7B29E263DF003697D3 /* MyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppUITests.swift; sourceTree = "<group>"; };
 		33011E7D29E263DF003697D3 /* MyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		33011E8B29E27216003697D3 /* workflows */ = {isa = PBXFileReference; lastKnownFileType = folder; name = workflows; path = .github/workflows; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				33011E5F29E263DE003697D3 /* MyApp */,
+				33011E8A29E271DC003697D3 /* Supporting Files */,
 				33011E7029E263DE003697D3 /* MyAppTests */,
 				33011E7A29E263DF003697D3 /* MyAppUITests */,
 				33011E5E29E263DE003697D3 /* Products */,
@@ -125,6 +127,14 @@
 				33011E7D29E263DF003697D3 /* MyAppUITestsLaunchTests.swift */,
 			);
 			path = MyAppUITests;
+			sourceTree = "<group>";
+		};
+		33011E8A29E271DC003697D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				33011E8B29E27216003697D3 /* workflows */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
