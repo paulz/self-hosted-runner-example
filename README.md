@@ -10,7 +10,11 @@ To help developers setup their projects with self-hosted runners on Mac.
 
 This repository has working xcode project and Github Actions workflows that can be used as a template.
 
-See [wiki](https://github.com/paulz/self-hosted-runner-example/wiki) on instructions how to setup macOS runners
+### How to run
+
+See [wiki](https://github.com/paulz/self-hosted-runner-example/wiki) on instructions how to setup macOS runners.
+
+Fork this repository and add your runner to see them build and test example code.
 
 ### Why self-hosted
 
