@@ -1,0 +1,68 @@
+name: dependencies update
+
+# Weekly PR to update dependencies:
+#   - Swift Packages
+#   - Ruby Gems
+#   - Github actions
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - experiment/update-dependencies/**
+  schedule:
+    # Saturday Morning
+    - cron: '0 4 * * 6' # https://crontab.guru/#0_4_*_*_6
+
+defaults:
+  run:
+    shell: zsh --login --errexit --pipefail {0}
+
+concurrency:
+  group: one-dependencies-update-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-dependencies:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Update Ruby Gems
+      if: hashFiles(Gemfile)
+      run: bundle update
+
+    - name: Update Swift packages
+      run: |
+        NEW_SPM_CLONE_DIR=$(mktemp -d)
+        rm ./MyApp.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+        ./scripts/resolve-swift-package-dependencies.zsh $NEW_SPM_CLONE_DIR
+        rm -rf $NEW_SPM_CLONE_DIR
+        xcrun swift package update --package-path MyLibrary
+
+    - name: Create Pull Request
+      id: create-pr
+      uses: peter-evans/create-pull-request@v4
+      with:
+        branch: create-pull-request/update-dependencies
+        delete-branch: true
+        token: ${{ secrets.REPO_SCOPED_TOKEN }}
+        title: Update dependencies
+        commit-message: Update dependencies
+        body: |
+          Automated dependencies update
+          
+          https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          Triggered by event: ${{ github.event_name }}
+          Prepared by runner: ${{ runner.name }}
+          Actor: ${{ github.actor }}
+
+          See: https://github.com/peter-evans/create-pull-request
+
+    - name: Pull Request Number and URL
+      if: ${{ steps.create-pr.outputs.pull-request-number }}
+      run: |
+        echo "::notice:: Pull Request Number - ${{ steps.create-pr.outputs.pull-request-number }}"
+        echo "::notice:: Pull Request URL - ${{ steps.create-pr.outputs.pull-request-url }}"

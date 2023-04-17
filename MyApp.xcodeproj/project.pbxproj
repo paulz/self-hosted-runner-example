@@ -14,6 +14,7 @@
 		33011E7229E263DE003697D3 /* MyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33011E7129E263DE003697D3 /* MyAppTests.swift */; };
 		33011E7C29E263DF003697D3 /* MyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33011E7B29E263DF003697D3 /* MyAppUITests.swift */; };
 		33011E7E29E263DF003697D3 /* MyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33011E7D29E263DF003697D3 /* MyAppUITestsLaunchTests.swift */; };
+		337F546529ED004400DC269E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 337F546429ED004400DC269E /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		33011E7B29E263DF003697D3 /* MyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppUITests.swift; sourceTree = "<group>"; };
 		33011E7D29E263DF003697D3 /* MyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		33011E8B29E27216003697D3 /* workflows */ = {isa = PBXFileReference; lastKnownFileType = folder; name = workflows; path = .github/workflows; sourceTree = "<group>"; };
+		337F546629ED00CC00DC269E /* MyLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MyLibrary; path = ../../MyApp/MyLibrary; sourceTree = "<group>"; };
+		337F546729ED02FF00DC269E /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				337F546529ED004400DC269E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +79,7 @@
 		33011E5429E263DE003697D3 = {
 			isa = PBXGroup;
 			children = (
+				337F546629ED00CC00DC269E /* MyLibrary */,
 				33011E5F29E263DE003697D3 /* MyApp */,
 				33011E8A29E271DC003697D3 /* Supporting Files */,
 				33011E7029E263DE003697D3 /* MyAppTests */,
@@ -132,6 +137,7 @@
 		33011E8A29E271DC003697D3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				337F546729ED02FF00DC269E /* scripts */,
 				33011E8B29E27216003697D3 /* workflows */,
 			);
 			name = "Supporting Files";
@@ -153,6 +159,9 @@
 			dependencies = (
 			);
 			name = MyApp;
+			packageProductDependencies = (
+				337F546429ED004400DC269E /* Lottie */,
+			);
 			productName = MyApp;
 			productReference = 33011E5D29E263DE003697D3 /* MyApp.app */;
 			productType = "com.apple.product-type.application";
@@ -225,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 33011E5429E263DE003697D3;
+			packageReferences = (
+				337F546329ED004400DC269E /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = 33011E5E29E263DE003697D3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -593,6 +605,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		337F546329ED004400DC269E /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		337F546429ED004400DC269E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 337F546329ED004400DC269E /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 33011E5529E263DE003697D3 /* Project object */;
 }
