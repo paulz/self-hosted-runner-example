@@ -1,6 +1,10 @@
 name: screen share
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - experiment/screen-share/**
 
 defaults:
   run:
@@ -20,6 +24,9 @@ jobs:
           ngrok tcp 5900 > /dev/null &
           jobs %%
       - name: Show ngrok URL
-        run: curl -s http://localhost:4040/api/tunnels | jq '.tunnels[0].public_url | sub("tcp://"; "vnc://ci@")'
+        run: >
+          curl -s http://localhost:4040/api/tunnels
+          | jq '.tunnels[0].public_url'
+          | sed -n "s,tcp://,vnc://${USERNAME}@,p"
       - name: Activate ngrok to keep it running for 30 minutes
         run: sleep 1800
