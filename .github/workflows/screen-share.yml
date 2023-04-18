@@ -1,0 +1,25 @@
+name: screen share
+
+on: workflow_dispatch
+
+defaults:
+  run:
+    shell: zsh --login --errexit --pipefail {0}
+
+jobs:
+  open-tunnel:
+    name: Open Screen Share Tunnel
+    timeout-minutes: 31
+    runs-on: self-hosted
+    concurrency:
+      group: one ngrok tunnel at a time
+      cancel-in-progress: true
+    steps:
+      - name: Launch ngrok on background
+        run: |
+          ngrok tcp 5900 > /dev/null &
+          jobs %%
+      - name: Show ngrok URL
+        run: curl -s http://localhost:4040/api/tunnels | jq '.tunnels[0].public_url | sub("tcp://"; "vnc://ci@")'
+      - name: Activate ngrok to keep it running for 30 minutes
+        run: sleep 1800
