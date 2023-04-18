@@ -19,6 +19,13 @@ jobs:
       group: one ngrok tunnel at a time
       cancel-in-progress: true
     steps:
+      - name: get user
+        run: |
+          echo $USER
+          echo $USERNAME
+          id -un
+          id -unr
+          whoami
       - name: Launch ngrok on background
         run: |
           ngrok tcp 5900 > /dev/null &
