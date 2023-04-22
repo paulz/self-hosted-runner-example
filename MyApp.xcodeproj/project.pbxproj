@@ -15,6 +15,7 @@
 		33011E7C29E263DF003697D3 /* MyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33011E7B29E263DF003697D3 /* MyAppUITests.swift */; };
 		33011E7E29E263DF003697D3 /* MyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33011E7D29E263DF003697D3 /* MyAppUITestsLaunchTests.swift */; };
 		337F546529ED004400DC269E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 337F546429ED004400DC269E /* Lottie */; };
+		33ACFBAE29F4A16C0016B72D /* MyLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 33ACFBAD29F4A16C0016B72D /* MyLibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33ACFBAE29F4A16C0016B72D /* MyLibrary in Frameworks */,
 				337F546529ED004400DC269E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +87,7 @@
 				33011E7029E263DE003697D3 /* MyAppTests */,
 				33011E7A29E263DF003697D3 /* MyAppUITests */,
 				33011E5E29E263DE003697D3 /* Products */,
+				33ACFBAC29F4A16C0016B72D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +146,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		33ACFBAC29F4A16C0016B72D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,6 +171,7 @@
 			name = MyApp;
 			packageProductDependencies = (
 				337F546429ED004400DC269E /* Lottie */,
+				33ACFBAD29F4A16C0016B72D /* MyLibrary */,
 			);
 			productName = MyApp;
 			productReference = 33011E5D29E263DE003697D3 /* MyApp.app */;
@@ -622,6 +633,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 337F546329ED004400DC269E /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		33ACFBAD29F4A16C0016B72D /* MyLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MyLibrary;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
