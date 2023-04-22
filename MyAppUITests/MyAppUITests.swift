@@ -19,6 +19,9 @@ final class MyAppUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        XCTAssertTrue(app.wait(for: .runningForeground, timeout: 10))
+        XCTAssertTrue(app.images["Globe"].waitForExistence(timeout: 1))
+        XCTAssertTrue(app.staticTexts["Hello, world!"].exists)
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
